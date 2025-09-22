@@ -1,0 +1,700 @@
+@keyframes space {
+	from {
+		background-position: 0px 0px;
+	}
+
+	to {
+		background-position: -700px 0px;
+	}
+}
+
+.planets {
+	background: #07121b url('../assets/stars.png') repeat 0px 0px;
+	height: 100vh;
+	background-size: 700px;
+	animation: space 90s linear infinite;
+}
+
+.planets * {
+	border-radius: 50%;
+}
+
+.planets div {
+	transition: 2s;
+}
+
+.planets div:hover {
+	box-shadow: 0 0 1.5em 0.25em #fff, 0 0 0.2em 0.2em #08fdd8;
+}
+
+.planets > section {
+	animation: Float 3s infinite ease-in-out;
+}
+
+.eyes,
+.eyes::after {
+	animation: Blink infinite;
+}
+
+.planet_sun {
+	left: 0%;
+	top: 5%;
+	animation-duration: 14s !important;
+}
+
+.planet_sun div {
+	background: #ffe100;
+	width: 260px;
+	height: 260px;
+	z-index: 9;
+	box-shadow: 1em 1em 11em 0.5em #ffe100;
+	z-index: 100;
+}
+
+.eyes_sun {
+	width: 20px;
+	height: 30px;
+	top: 60px;
+	right: 60px;
+	animation-duration: 5s;
+	animation-delay: 3s;
+}
+
+.eyes_sun:after {
+	width: 14px;
+	height: 20px;
+	top: 8px;
+	right: -13px;
+	animation-duration: 5s;
+	animation-delay: 3s;
+}
+
+.planet_red {
+	left: 50px;
+	top: 60%;
+	animation-duration: 11s !important;
+}
+
+.planet_red div {
+	background: #bc2626;
+	width: 200px;
+	height: 200px;
+	z-index: 9;
+}
+
+.planet_red div:before {
+	background: #941717;
+	width: 80px;
+	height: 110px;
+	top: -17%;
+	right: -9%;
+	box-shadow: 6px -3px 0px #7e1010 inset;
+}
+
+.planet_red div:after {
+	background: #941717;
+	width: 100px;
+	height: 60px;
+	top: 230px;
+	right: 90px;
+	box-shadow: 11px 1px 0px #7e1010 inset;
+}
+
+.circles_red {
+	background: #941717;
+	width: 150px;
+	height: 90px;
+	top: -34px;
+	right: 130px;
+	box-shadow: 11px -5px 0px #7e1010 inset;
+}
+
+.circles_red:before {
+	background: #941717;
+	width: 80px;
+	height: 60px;
+	top: 80%;
+	right: 20%;
+	transform: translateY(80px);
+	box-shadow: 4px -7px 0px #7e1010 inset;
+}
+
+.circles_red:after {
+	background: #941717;
+	width: 80px;
+	height: 60px;
+	top: 90%;
+	right: -40%;
+	transform: translateY(80px) translateX(20px);
+	box-shadow: 4px -7px 0px #7e1010 inset;
+}
+
+.eyes_red {
+	width: 20px;
+	height: 30px;
+	top: 60px;
+	right: 60px;
+	animation-duration: 2s;
+	animation-delay: 0.5s;
+}
+
+.eyes_red:after {
+	width: 14px;
+	height: 20px;
+	top: 8px;
+	right: -13px;
+	animation-duration: 2s;
+	animation-delay: 0.5s;
+}
+
+.planet_earth {
+	right: 20%;
+	top: 20%;
+	animation-duration: 10s !important;
+	transition: 1s all;
+}
+
+.planet_earth div {
+	background: #7ecded;
+	width: 130px;
+	height: 130px;
+}
+.planet_earth div:before {
+	background: #1aa845;
+	width: 110px;
+	height: 80px;
+	top: -30px;
+	right: 70px;
+	box-shadow: 0px -5px 0px #189c34 inset;
+}
+
+.planet_earth div:after {
+	background: #1aa845;
+	width: 80px;
+	height: 50px;
+	top: 90px;
+	right: 20px;
+	box-shadow: -6px 0px 0px #189c34 inset;
+}
+
+.eyes_earth {
+	width: 14px;
+	height: 20px;
+	top: 26px;
+	right: 37px;
+	animation-duration: 2s;
+	animation-delay: 1s;
+}
+
+.eyes_earth:after {
+	width: 12px;
+	height: 15px;
+	top: -2px;
+	right: -10px;
+	animation-duration: 2s;
+	animation-delay: 1s;
+}
+
+.clouds {
+	position: absolute;
+	background: #fff;
+	width: 50px;
+	height: 50px;
+	top: 62px;
+	right: 110px;
+	box-shadow: -6px 0px 0px #f5f5f5 inset;
+	z-index: 4;
+}
+
+.clouds:after {
+	position: absolute;
+	background: #fff;
+	content: '';
+	width: 50px;
+	height: 60px;
+	top: -24px;
+	right: -144px;
+	border-radius: 50%;
+	box-shadow: 1px -3px 0px #e6e6e6 inset;
+}
+
+.planet_green {
+	left: 35%;
+	top: 50%;
+	animation: none !important;
+}
+
+.planet_green div {
+	background: #55a9b3;
+	width: 120px;
+	height: 120px;
+	transform: scaleX(-1);
+}
+
+.planet_green div:before {
+	background: #2b838e;
+	width: 20px;
+	height: 30px;
+	top: 100px;
+	right: 30px;
+	box-shadow: 4px -3px 0px #1e6d78 inset;
+}
+
+.planet_green div:after {
+	background: #2b838e;
+	width: 30px;
+	height: 30px;
+	top: 60px;
+	right: 60px;
+	box-shadow: 5px -2px 0px #1e6d78 inset;
+}
+
+.circles_green {
+	background: #2b838e;
+	width: 40px;
+	height: 40px;
+	top: -4px;
+	right: -10px;
+	box-shadow: 4px -4px 0px #1e6d78 inset;
+}
+
+.circles_green:before {
+	background: #2b838e;
+	width: 40px;
+	height: 40px;
+	top: -4px;
+	right: 95px;
+	box-shadow: -2px -4px 0px #1e6d78 inset;
+}
+
+.eyes_green {
+	width: 14px;
+	height: 20px;
+	top: 30px;
+	right: 40px;
+	animation-duration: 3s;
+	animation-delay: 1.8s;
+}
+
+.eyes_green:after {
+	width: 12px;
+	height: 15px;
+	top: 0px;
+	right: -11px;
+	animation-duration: 3s;
+	animation-delay: 1.8s;
+}
+
+.planet_yellow {
+	left: 45%;
+	top: 10%;
+	animation-duration: 12s !important;
+	transition: 1s all;
+}
+
+.planet_yellow div {
+	background: #e8a344;
+	width: 180px;
+	height: 180px;
+}
+
+.planet_yellow div:before {
+	background: #db922c;
+	width: 39px;
+	height: 30px;
+	top: 127px;
+	right: 80px;
+	box-shadow: 3px -1px 0px #ca7515 inset;
+}
+
+.planet_yellow div:after {
+	background: #db922c;
+	width: 50px;
+	height: 38px;
+	top: 70px;
+	right: 28px;
+	box-shadow: 5px 1px 0px #ca7515 inset;
+}
+
+.circles_yellow {
+	background: #db922c;
+	width: 60px;
+	height: 33px;
+	top: 9px;
+	right: 61px;
+	box-shadow: 5px 0px 0px #ca7515 inset;
+}
+
+.eyes_yellow {
+	width: 20px;
+	height: 30px;
+	top: 60px;
+	right: 130px;
+	animation-duration: 4s;
+	animation-delay: 2.5s;
+}
+
+.eyes_yellow:after {
+	width: 14px;
+	height: 20px;
+	top: 8px;
+	right: 18px;
+	animation-duration: 4s;
+	animation-delay: 2.5s;
+}
+
+.planet_blue {
+	right: 25%;
+	top: 70%;
+	animation-duration: 15s !important;
+}
+
+.planet_blue div {
+	background: #455fc5;
+	width: 120px;
+	height: 120px;
+	transform: scaleX(-1);
+}
+
+.planet_blue div:before {
+	background: #364ba0;
+	width: 20px;
+	height: 30px;
+	top: 100px;
+	right: 30px;
+	box-shadow: 4px -3px 0px #1e3078 inset;
+}
+
+.planet_blue div:after {
+	background: #364ba0;
+	width: 30px;
+	height: 30px;
+	top: 60px;
+	right: 60px;
+	box-shadow: 5px -2px 0px #1e3078 inset;
+}
+
+.circles_blue {
+	background: #364ba0;
+	width: 40px;
+	height: 40px;
+	top: -4px;
+	right: -10px;
+	box-shadow: 4px -4px 0px #1e3078 inset;
+}
+
+.circles_blue:before {
+	background: #364ba0;
+	width: 40px;
+	height: 40px;
+	top: -4px;
+	right: 95px;
+	box-shadow: -2px -4px 0px #1e3078 inset;
+}
+
+.eyes_blue {
+	width: 14px;
+	height: 20px;
+	top: 30px;
+	right: 40px;
+	animation-duration: 3s;
+	animation-delay: 1.8s;
+}
+
+.eyes_blue:after {
+	width: 12px;
+	height: 15px;
+	top: 0px;
+	right: -11px;
+	animation-duration: 3s;
+	animation-delay: 1.8s;
+}
+.planet_orange {
+	left: -80px;
+	top: 22em;
+	animation-duration: 15s !important;
+}
+
+.planet_orange div {
+	background: #ff9253;
+	width: 75px;
+	height: 75px;
+	z-index: 9;
+	transform: scale(-1);
+}
+.planet_orange:before {
+	background: #ff7829;
+	width: 40px;
+	height: 40px;
+	top: -20px;
+	right: 49px;
+	box-shadow: 0px -5px 0px #ff7236 inset;
+}
+
+.planet_orange:after {
+	background: #ff7c3a;
+	width: 80px;
+	height: 50px;
+	top: 90px;
+	right: 20px;
+	box-shadow: -6px 0px 0px #ff7236 inset;
+}
+
+.circles_orange {
+	background: #ff7c3a;
+	width: 15px;
+	height: 19px;
+	top: 46px;
+	right: 24px;
+	box-shadow: 2px -1px 0px #ff7236 inset;
+	z-index: 4;
+}
+
+.circles_orange:after {
+	background: #ff7c3a;
+	width: 50px;
+	height: 40px;
+	top: -48px;
+	right: -52px;
+	box-shadow: 1px -3px 0px #ff7236 inset;
+}
+
+.eyes_orange {
+	width: 9px;
+	height: 10px;
+	top: 34px;
+	right: 51px;
+	animation-delay: 3s;
+	animation-duration: 2s;
+}
+
+.eyes_orange:after {
+	content: '';
+	width: 10px;
+	height: 13px;
+	top: -4px;
+	right: -9px;
+	animation-delay: 3s;
+	animation-duration: 2s;
+}
+
+.planet_purple {
+	left: 70%;
+	top: 45%;
+	animation-duration: 16s !important;
+}
+
+.planet_purple div {
+	background: #9344e8;
+	width: 180px;
+	height: 180px;
+}
+
+.planet_purple 
+div:before {
+	background: #6c28ba;
+	width: 39px;
+	height: 30px;
+	top: 50%;
+	right: 40%44444444444444444;
+	box-shadow: 3px -1px 0px #6c20c3 inset;
+}
+
+.planet_purple div:after {
+	background: #6c28ba;
+	width: 50px;
+	height: 38px;
+	top: 90%;
+	right: 30%;
+	box-shadow: 5px 1px 0px #6c20c3 inset;
+}
+
+.circles_purple {
+	background: #6c28ba;
+	width: 60px;
+	height: 33px;
+	top: 9px;
+	right: 61px;
+	box-shadow: 5px 0px 0px #6c20c3 inset;
+}
+
+.circles_purple:after {
+	background: #6c28ba;
+	width: 60px;
+	height: 60px;
+	top: 80px;
+	right: -80px;
+	box-shadow: -1px -4px 1px #6c20c3 ;
+}
+
+.circles_purple:before {
+	background: #6c28ba;
+	width: 60px;
+	height: 50px;
+	top: 80px;
+	left: -72px;
+	box-shadow:-2px -2px 0px #6c20c3;
+}
+
+.eyes_purple {
+	width: 20px;
+	height: 30px;
+	top: 60px;
+	right: 130px;
+	animation-duration: 4s;
+	animation-delay: 2.5s;
+}
+
+.eyes_purple:after {
+	width: 14px;
+	height: 20px;
+	top: 8px;
+	right: 18px;
+	animation-duration: 4s;
+	animation-delay: 2.5s;
+}
+
+.planet_moon {
+	right: 0%;
+	top: 5%;
+}
+
+.planet_moon div {
+	background: #e8e8e8;
+	width: 75px;
+	height: 75px;
+}
+
+.planet_moon:before {
+	background: #e2e2e2;
+	width: 40px;
+	height: 40px;
+	top: -20px;
+	right: 49px;
+	box-shadow: 0px -5px 0px #c8c8c8 inset;
+}
+
+.planet_moon:after {
+	background: #e2e2e2;
+	width: 80px;
+	height: 50px;
+	top: 90px;
+	right: 20px;
+	box-shadow: -6px 0px 0px #c8c8c8 inset;
+}
+
+.circles_moon {
+	background: #cecece;
+	width: 15px;
+	height: 19px;
+	top: 46px;
+	right: 24px;
+	box-shadow: 2px -1px 0px #b1b1b1 inset;
+	z-index: 4;
+}
+
+.circles_moon:after {
+	background: #e2e2e2;
+	width: 50px;
+	height: 40px;
+	top: -48px;
+	right: -52px;
+	box-shadow: 1px -3px 0px #c8c8c8 inset;
+}
+
+.eyes_moon {
+	width: 9px;
+	height: 10px;
+	top: 34px;
+	right: 51px;
+	animation-delay: 3s;
+	animation-duration: 2s;
+}
+
+.eyes_moon:after {
+	width: 10px;
+	height: 13px;
+	top: -4px;
+	right: -9px;
+	animation-delay: 3s;
+	animation-duration: 2s;
+}
+
+@keyframes Blink {
+	0% {
+		transform: scaleY(100%);
+	}
+
+	5% {
+		transform: scaleY(0%);
+	}
+
+	10% {
+		transform: scaleY(100%);
+	}
+
+	100% {
+		transform: scaleY(100%);
+	}
+}
+
+@keyframes Float {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(15px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.planets div {
+		transition: 2s;
+		transform: scale(0.4);
+	}
+
+	.planet_yellow {
+		left: 20%;
+		top: 40%;
+		transition: 1s all;
+	}
+
+	.planet_earth {
+		left: 20%;
+		top: 30%;
+		transition: 1s all;
+	}
+
+}
+
+@media screen and (max-width: 992px) {
+	.planets div {
+		transition: 2s;
+		transform: scale(0.6);
+	}
+}
+
+.loading-track {
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #ddd;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+	border-radius: 0;
+	 transition: width 2s;
+}
+
+.textBulp p {
+	font-size: 1rem;
+	margin-top: 1em;
+    max-width: 9em;
+}

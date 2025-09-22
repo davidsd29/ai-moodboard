@@ -1,0 +1,136 @@
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+  font-weight: bold;
+  color: #000;
+  background: #dce0da;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #08fdd8;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  font-weight: 600;
+  color: #d1d5db; 
+  border: 1px solid #08fdd8;
+  background: transparent;
+
+}
+
+.btn-secondary:hover {
+  background: #08fdd81a;
+  box-shadow: 0 0 15px #08fdd899;
+}
+
+
+
+.wobble-vertical:hover,
+.wobble-horizontal:hover {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+.wobble-vertical:hover{
+    animation-name: wobble-vertical;
+}
+
+.wobble-horizontal:hover{
+    animation-name: wobble-horizontal;
+}
+
+.float {
+    position: relative;
+	transition-duration: .3s;
+	transition-property: transform;
+}
+
+.float:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 80%); 
+    transition-duration: .3s;
+    transition-property: transform opacity;
+}
+
+.float:hover {
+    transform: translateY(-5px);
+}   
+
+.float:hover:before {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+
+@keyframes wobble-vertical {
+	16.65% {
+		transform: translateY(8px);
+	}
+
+	33.3% {
+		transform: translateY(-6px);
+	}
+
+	49.95% {
+		transform: translateY(4px);
+	}
+
+	66.6% {
+		transform: translateY(-2px);
+	}
+
+	83.25% {
+		transform: translateY(1px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes wobble-horizontal {
+	16.65% {
+		transform: translateX(8px);
+	}
+
+	33.3% {
+		transform: translateX(-6px);
+	}
+
+	49.95% {
+		transform: translateX(4px);
+	}
+
+	66.6% {
+		transform: translateX(-2px);
+	}
+
+	83.25% {
+		transform: translateX(1px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}

@@ -1,0 +1,64 @@
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+@import "tailwindcss";
+
+html, body, #root { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 600;
+  margin: 0;
+}
+/* 
+.background {
+  background: #07121b url('./assets/stars.png') repeat 0px 0px;
+	height: 100vh;
+	background-size: 700px;
+	animation: space 90s linear infinite;
+  transition:1s ease-out; ;
+} */
+
+.starfield{ 
+    background-color: #1B2633;
+  background-image: radial-gradient( circle at bottom, white, transparent 70%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-blend-mode: overlay;
+}
+
+.star {
+  height: 1px;
+  width: 1px;
+  background-color: white;
+  position: absolute;
+}
+
+.star:nth-child(10n) {
+  height: 2px;
+  width: 2px;
+}
+
+.star:nth-child(100n) {
+  height: 3px;
+  width: 3px;
+}
