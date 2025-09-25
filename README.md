@@ -47,7 +47,7 @@ npm run dev
 yarn dev
 ```
 
-##How it Works
+## How it Works
 
 1.User enters a prompt in the Generate Page.
 
