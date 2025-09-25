@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Robot} from "../components";
-// import { startGeneration } from "../services/mockAI";
+
 type Color = {
   name: string;
   hex: string;
@@ -28,11 +28,16 @@ const GeneratePage = () => {
     }
 
     const data = await response.json();
-    console.log(data);
-    const colors: Color[] = Array.isArray(data.colors) ? data.colors : [];
+    const ticketID = data.ticketID;
 
-    navigateTo("/results", { state: { prompt, colors } });
-
+    
+    if (!ticketID) {
+      alert("No ticket received from server.");
+      return;
+    }
+    
+    navigateTo("/loading", { state: { prompt, ticketID: data.ticketID } });
+    
   } catch (error) {
     console.error("Error during fetch:", error);
     alert("An error occurred while generating the palette. Please try again.");
@@ -41,16 +46,16 @@ const GeneratePage = () => {
 
   }
 
-// cozy autumn living room
   return (
    <>
+    <div className="relative -top-1/5">
       <p className="p-8 text-center sm:hidden">Hello, creator.<br/>
         Provide 2–5 keywords to define your mood. <br/>
         Example: “summer, birthday, 5-year-old girl”.
         Output: a curated 5-color palette.
       </p>
       
-      <div className="p-8 md:p-24 flex flex-col items-start space-y-4 w-full mx-auto md:flex-row md:items-center md:space-y-0 md:space-x-4 md:w-3/4">
+      <div className="p-8 md:p-24 flex flex-col space-y-4 w-full mx-auto md:flex-row md:items-center md:space-y-0 md:space-x-4 md:w-3/4">
         <input
           type="text"
           value={prompt}
@@ -66,13 +71,13 @@ const GeneratePage = () => {
           Generate
         </Button>
       </div>
+       </div>
 
       <Robot text={["Hello, creator.",
-  "Provide 2–5 keywords to define your mood.",
-  "Example: “summer, birthday, 5-year-old girl”.",
-  "Output: a curated 5-color palette."]} />
+      "Provide 2–5 keywords to define your mood.",
+      "Example: “summer, birthday, 5-year-old girl”.",
+      "Output: a curated 5-color palette."]} />
     </>
-
   );
 }
 

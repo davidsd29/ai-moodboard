@@ -21,8 +21,7 @@ const openai = new OpenAI({
 });
    
 
-  app.post("http://localhost:3000/api/generate-palette", cors(), async (req, res) => {
-console.log("POST /api/generate-palette called");
+  app.post("/api/generate-palette", cors(), async (req, res) => {
   
   try {
     const { prompt } = req.body;
@@ -30,6 +29,9 @@ console.log("POST /api/generate-palette called");
     if (!prompt || typeof prompt !== "string") {
       return res.status(400).json({ error: "Invalid prompt" });
     }
+
+    //need ticketID
+
 
    const response = await openai.chat.completions.create({
       model: "gpt-4",
@@ -41,7 +43,6 @@ console.log("POST /api/generate-palette called");
     });
 
     const output = response.choices[0]?.message?.content || "";
-    console.log(output);
     
     const colors = output
       .split("\n")

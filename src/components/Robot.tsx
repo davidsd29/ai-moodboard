@@ -1,9 +1,5 @@
 import "../styles/robot.css";
 import { useMemo } from "react";
-// type RobotProps =
-//   | { random?: false; text: string[]; className?: string }
-//   | { random: true; text?: never; className?: string };
-
 
 type RobotProps = {
   random?: boolean;
@@ -28,7 +24,7 @@ const tips = [
     []
   );
 
-    const lines = props.random ? [randomLine] : props.text;
+    const lines = props.random ? [randomLine] : props.text || [];
     const hide = props.hidden ? "hidden md:flex" : "";
 
   return (
