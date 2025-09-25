@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Robot} from "../components";
+import { useMemo } from "react";
 
 type Color = {
   name: string;
@@ -9,22 +10,28 @@ type Color = {
 
 type ResultState = {
   prompt?: string;
-  colors?: Color[];
+  result?: {
+    caption: string;
+    keywords: string[];
+    colors: Color[];
+    imageUrl?: string;
+  }
 };
 
 const ResultsPage = () => {
 
     const navigateTo = useNavigate()
     const { state } = useLocation();
-    const { prompt = "", colors } = (state || {}) as ResultState;    
+    const { prompt = "", result } = (state || {}) as ResultState;
+    const safeColors = useMemo(() => result?.colors || [], [result]);
 
     useEffect(() => {
-        if (!colors || colors.length === 0) {
-            // No colors in state → back to landingpage
-            navigateTo("/", { replace: true });
-        }
-    }, [colors, navigateTo]);
-    const safeColors = colors || [];
+    // Eerst checken of result bestaat
+    if (!result || !result.colors || result.colors.length === 0) {
+        console.log("Het is leeg of result ontbreekt", result);
+        navigateTo("/", { replace: true });
+    }
+    }, [result, navigateTo]);
 
     return (
        <>
@@ -39,7 +46,7 @@ const ResultsPage = () => {
                 <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                 {safeColors.map((color, index) => (
                     <div key={`${color.hex}-${index}`} className="rounded-xl p-3 border border-white/10 max-w-0.5xs">
-                    <div className="w-full h-16 rounded-lg " />
+                    <div className="w-full h-16 rounded-lg" style={{background: color.hex}} />
                     <p className="mt-2 text-sm font-medium">{color.name}</p>
                     <p className="mt-1 text-xs tabular-nums">{color.hex}</p>
                     </div>

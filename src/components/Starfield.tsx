@@ -4,7 +4,7 @@ const getRandom = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const Starfield = ({ starCount = 2000 }) => {
+const Starfield = ({ starCount = 60 }) => {
   const [positions, setPositions] = useState(
     // set the initial positions (placeholder values) for every star
     () => Array.from({ length: starCount }, () => ({ top: "0px", right: "0px" }))
