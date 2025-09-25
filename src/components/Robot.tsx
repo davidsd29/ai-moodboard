@@ -28,7 +28,7 @@ const tips = [
     const hide = props.hidden ? "hidden md:flex" : "";
 
   return (
-<div className={`${hide} absolute top-[53%] right-[5%] z-1 flex flex-col items-center justify-center m-auto robot`}>
+<div className={`${hide} absolute md:scale-75 top-[45%] right-[5%] z-1 flex flex-col items-center justify-center m-auto robot`}>
       <div className="robot-head">
       <span className="face"></span>
 

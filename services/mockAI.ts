@@ -3,7 +3,7 @@ export type AIStatus = 'idle' | 'processing' | 'completed' | 'error';
 type Color = { name: string; hex: string };
 
 export interface MoodboardData {
-  palette: Color[];
+  colors: Color[];
   caption: string;
   keywords: string[];
   imageUrl?: string;
@@ -36,7 +36,7 @@ function MakeFakeMoodboard(prompt: string): MoodboardData {
     .map(w => w.toLowerCase());
 
   return {
-    palette: baseColors,
+    colors: baseColors,
     caption: `Mood for: ${prompt}`,
     keywords: words.length ? words : ["mood", "board", "ai"],
     imageUrl: undefined, // later te vullen

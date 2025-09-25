@@ -12,7 +12,7 @@ const Hero = () => {
   ];
 
   return (
-    <ul className="flex flex-wrap justify-center items-center p-0 m-auto list-none w-full">
+    <ul className="flex flex-wrap justify-center items-center p-0 m-auto list-none w-full md:pt-32">
       {colors.map((color, i) => (
         <li
           key={i}

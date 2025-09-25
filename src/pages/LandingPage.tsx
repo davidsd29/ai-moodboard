@@ -13,7 +13,7 @@ const LandingPage = () => {
       <main className="max-w-5xl mx-auto px-4 flex justify-end">
         <section className="grid ">
             <Hero />
-          <Button to="/api/generate-palette" variant="primary" size="lg" className="mt-8 mx-auto">
+          <Button to="/api/generate-palette" variant="primary" size="lg" className="mt-8 mx-auto absolute left-1/2 bottom-1/10 -translate-x-1/2 -translate-y-1/2">
             Generate
           </Button>
 
