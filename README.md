@@ -24,7 +24,7 @@ A web application to generate 5-color moodboards based on user prompts, using ei
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/moodboard-ai.git
+git clone https://github.com/davidsd29/ai-moodboard.git
 cd moodboard-ai
 ```
 
