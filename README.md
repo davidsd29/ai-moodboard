@@ -49,7 +49,7 @@ yarn dev
 
 ##How it Works
 
-1. User enters a prompt in the Generate Page.
+1.User enters a prompt in the Generate Page.
 
 2.Depending on the mode (mock AI / real AI):
 
@@ -57,8 +57,8 @@ yarn dev
 
 - Real AI: Calls OpenAI API to generate a color palette.
 
-3. LoadingPage shows progress and waits until the AI result is ready.
+3.LoadingPage shows progress and waits until the AI result is ready.
 
-4. ResultsPage displays the palette with colors and hex codes.
+4.ResultsPage displays the palette with colors and hex codes.
 
-5. User can regenerate or start a new prompt.
+5.User can regenerate or start a new prompt.
