@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Robot} from "../components";
 
@@ -17,7 +17,6 @@ const ResultsPage = () => {
     const navigateTo = useNavigate()
     const { state } = useLocation();
     const { prompt = "", colors } = (state || {}) as ResultState;    
-     const [hoverColor, setHoverColor] = useState<string | null>(null);
 
     useEffect(() => {
         if (!colors || colors.length === 0) {
@@ -25,7 +24,6 @@ const ResultsPage = () => {
             navigateTo("/", { replace: true });
         }
     }, [colors, navigateTo]);
-console.log(colors);
     const safeColors = colors || [];
 
     return (
@@ -41,12 +39,9 @@ console.log(colors);
                 <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                 {safeColors.map((color, index) => (
                     <div key={`${color.hex}-${index}`} className="rounded-xl p-3 border border-white/10 max-w-0.5xs">
-                    <div className="w-full h-16 rounded-lg " 
-                        style={{ backgroundColor: color.hex }}
-                        onMouseEnter={() => setHoverColor(color.hex)}
-                         onMouseLeave={() => setHoverColor(null)} />
-                    <div className="mt-2 text-sm font-medium">{color.name}</div>
-                    <div className="mt-1 text-xs tabular-nums">{color.hex}</div>
+                    <div className="w-full h-16 rounded-lg " />
+                    <p className="mt-2 text-sm font-medium">{color.name}</p>
+                    <p className="mt-1 text-xs tabular-nums">{color.hex}</p>
                     </div>
                 ))}
                 </div>

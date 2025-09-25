@@ -1,61 +1,63 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Planet } from "../components";
-import { getAIStatus } from "/services/mockAI";
+// import { getAIStatus } from "/services/mockAI";
 
-type LoadingState = { value: number; prompt?: string };
-type RouteState = { prompt?: string; ticketID?: string };
+type LoadingState = { prompt?: string; ticketID?: string };
 
-// Functional component expecting a prop 'value' of type number
-const LoadingPage: React.FC<LoadingState> = () => {
-  const { state } = useLocation();
+const LoadingPage = () => {
   const navigateTo = useNavigate();
-  const { prompt = "", ticketID = "" } = (state || {}) as RouteState;
-  const [value, setValue] = useState(0);
+  const { state } = useLocation();
+  const { prompt, ticketID } = (state || {}) as LoadingState;
+  const [loadingValue, setValue] = useState(0);
 
   useEffect(() => {
-    if (!ticketID) {
-      alert("Geen TicketID ontvangen.");
-      navigateTo("/");
+
+    if (!prompt && !ticketID) {
+      navigateTo("/", { replace: true });
       return;
     }
 
-    let stoppedRunning = false;
+    let cancelled = false;
 
-    const getInfo = async () => {
+    const getStatus = async () => {
       try {
-        const ticket = await getAIStatus(ticketID);
+        // need to fetch
+        //after fetch check status of rersponse
 
-        setValue(Math.max(0, Math.min(100, ticket.progress ?? 0)));
+        if (cancelled) return;
 
-        if (ticket.status === "completed") {
-          navigateTo("/result", { state: { prompt, result: ticket.data, ticketID  } });
-         console.log(ticket.data);
-         console.log(prompt);
-          stoppedRunning = true;
-          return;
+        if () {
+          // status === done, check if response is an array & color array > 0
+          // send to results
+        } else if () {
+          //status === failed send back to home screen "try again"
+        } else {
+          // takes to long or get stuck, reset and fetch again
         }
 
-        if (ticket.status === "error") {
-          alert(
-            ticket.error || "Er is een fout opgetreden tijdens het genereren."
-          );
-          navigateTo("/");
-          return;
-        }
+
+
+
+      
+
       } catch (err) {
         console.error(err);
         alert("Kon status niet ophalen. Probeer opnieuw.");
         return; //stop function
       }
 
-      if (!stoppedRunning) setTimeout(getInfo, 500); //next calling moment
+    
     };
 
-    getInfo();
-  }, [ticketID, navigateTo, prompt]);
+    getStatus();
 
-  const safeValue = Math.max(0, Math.min(100, value));
+    //clean up
+    return () => {cancelled = true;};
+
+  }, [prompt, ticketID, navigateTo ]);
+
+  const safeValue = Math.max(0, Math.min(100, loadingValue));
   return (
     <>
       <section className="planets min-h-screen w-full grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] place-items-center bg-neutral-950 text-white gap-6">
